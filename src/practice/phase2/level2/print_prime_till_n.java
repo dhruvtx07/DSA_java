@@ -8,19 +8,21 @@ public class print_prime_till_n {
         System.out.println("----------------");
 
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a number: ");
+        System.out.print("Enter last number: ");
         int num = sc.nextInt();
-        boolean flag = true;
 
-        for(int i = 1; i<num/2; i++){
-            if(i!=1){
-                if(num%1==0){
-                    flag =false;
+        for(int i= 2; i<=num; i++){
+            boolean isPrime = true;
+            for(int j = 2; j<=i/2; j++){
+                if(i % j == 0){
+                    isPrime = false;
+                    break;
                 }
             }
-        }
-        if(!flag){
-            System.out.println("non prime");
+
+            if(isPrime){
+                System.out.println(i);
+            }
         }
 
 
