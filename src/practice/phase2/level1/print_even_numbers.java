@@ -1,18 +1,20 @@
-package practice.phase2.levl1;
+package practice.phase2.level1;
 import java.util.Scanner;
 
-public class print_number_one_to_n {
+public class print_even_numbers {
     public static void main(String[] args){
         System.out.println("--------------");
-        System.out.println("printing numbers");
+        System.out.println("printing even numbers");
         System.out.println("--------------");
 
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number: ");
 
         int num = sc.nextInt();
-        for(int i =1; i<=num; i++){
-            System.out.printf("%d\n", i);
+        for(int i =0; i<=num; i++){
+            if(i%2 == 0){
+                System.out.printf("%d\n", i);
+            }
         }
 
         sc.close();

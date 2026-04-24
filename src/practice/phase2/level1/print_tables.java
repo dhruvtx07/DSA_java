@@ -1,4 +1,4 @@
-package practice.phase2.levl1;
+package practice.phase2.level1;
 import java.util.Scanner;
 
 public class print_tables {
