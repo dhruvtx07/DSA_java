@@ -15,9 +15,10 @@ public class print_factors_of_n {
         int num = sc.nextInt();
 
         System.out.printf("factors of %d are: \n", num);
-        for(int i = 1; i<=num/2; i++){
+        for(int i = 1; i*i<=num; i++){
             if(num % i ==0){
                 System.out.printf("%d, ", i);
+                System.out.printf("%d, ", num/i);
             }
         }
         System.out.printf("%d ", num);

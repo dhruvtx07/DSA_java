@@ -17,16 +17,17 @@ public class sum_of_factors {
         System.out.printf("factors of %d are: ", num);
 
 
-        for(int i = 1; i<=num/2; i++){
+        for(int i = 1; i*i<=num; i++){
             if(num % i == 0){
                 System.out.printf("%d ,", i);
                 sum = sum + i;
+                System.out.printf("%d ,", num/i);
+                sum = sum + (num/i);
+
             }
         }
-        sum = sum + num;
 
-        System.out.printf("%d \n", num);
-        System.out.printf("sum of factors of %d are: %d", num, sum);
+        System.out.printf("\nsum of factors of %d are: %d", num, sum);
 
 
         sc.close();

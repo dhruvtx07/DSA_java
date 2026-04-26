@@ -21,15 +21,17 @@ public class highest_common_factor {
         factors1.add(1);
         factors2.add(1);
 
-        for(int i = 2; i<=num1/2;i++){
+        for(int i = 1; i*i<=num1;i++){
             if(num1%i == 0){
                 factors1.add(i);
+                factors1.add(num1/i);
             }
         }
 
-        for(int i = 2; i<=num2/2;i++){
+        for(int i = 1; i*i<=num2;i++){
             if(num2%i == 0){
                 factors2.add(i);
+                factors2.add(num2/i);
             }
         }
 
@@ -38,7 +40,7 @@ public class highest_common_factor {
             for(int j = 0; j<factors2.size(); j ++){
                 if(factors1.get(i) == factors2.get(j)){
                     commonFactors.add(factors1.get(i));
-                }
+                    }
             }
         }
 

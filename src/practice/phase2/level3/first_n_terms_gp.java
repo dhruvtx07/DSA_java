@@ -18,11 +18,13 @@ public class first_n_terms_gp {
         System.out.print("Enter gap ratio: ");
         int r = sc.nextInt();
 
-        System.out.printf("%d , ", a);
-
-        for(int i =1; i< n; i++){
-            a = a * r;
-            System.out.printf("%d , ", a);
+        for(int i =1; i<= n; i++){
+            if(i == 1){
+                System.out.printf("%d , ", a);
+            }else{
+                a = a * r;
+                System.out.printf("%d , ", a);
+            }
         }
 
     }

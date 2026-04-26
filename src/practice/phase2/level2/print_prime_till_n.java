@@ -13,7 +13,7 @@ public class print_prime_till_n {
 
         for(int i= 2; i<=num; i++){
             boolean isPrime = true;
-            for(int j = 2; j<=i/2; j++){
+            for(int j = 2; j*j<=i; j++){
                 if(i % j == 0){
                     isPrime = false;
                     break;

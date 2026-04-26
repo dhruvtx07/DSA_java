@@ -1,7 +1,7 @@
 package practice.phase2.level2;
 import java.util.Scanner;
 
-public class primt_number_check {
+public class prime_number_check {
     public static void main(String[] args){
         System.out.println("----------------");
         System.out.println("prime number checker");
@@ -10,16 +10,15 @@ public class primt_number_check {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number: ");
         int num = sc.nextInt();
-        boolean isPrime = true;
+        int countFactors = 0;
 
-        for(int i = 2; i<=num /2; i++){
+        for(int i = 1; i*i<=num; i++){
             if(num % i == 0){
-                isPrime = false;
-                break;
+                countFactors++;
             }
         }
 
-        if(isPrime){
+        if(countFactors<2){
             System.out.println("prime");
         }else{
             System.out.println("not a prime");

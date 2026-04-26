@@ -18,11 +18,9 @@ public class first_n_terms_ap {
         System.out.print("Enter gap between terms: ");
         int d = sc.nextInt();
 
-        System.out.printf("%d ,", a);
-
-        for(int i = 1; i< n; i++){
-            a = a + d;
-            System.out.printf("%d ,", a);
+        for(int i = 1; i<= n; i++){
+            int num = a + ((i-1)*d);
+            System.out.printf("%d ,", num);
         }
 
 
