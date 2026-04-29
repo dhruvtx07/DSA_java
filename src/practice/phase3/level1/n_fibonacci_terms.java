@@ -2,12 +2,13 @@ package practice.phase3.level1;
 import java.util.Scanner;
 
 public class n_fibonacci_terms {
-    public static int fibonnacci(int n){
+    public static void fibonnacci(int n){
         if(n == 1){
-            return 1;
+            System.out.print("1, ");
+
         }
         if(n == 0){
-            System.out.printf("inside recursion -> 0");
+            System.out.print("0, ");
             return 0;
         }
 
