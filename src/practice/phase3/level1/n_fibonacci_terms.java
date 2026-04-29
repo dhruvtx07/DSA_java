@@ -2,7 +2,7 @@ package practice.phase3.level1;
 import java.util.Scanner;
 
 public class n_fibonacci_terms {
-    public static void fibonnacci(int n){
+    public static int fibonnacci(int n){
         if(n == 1){
             System.out.print("1, ");
 
