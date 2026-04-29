@@ -1,15 +1,21 @@
 package practice.phase3.level1;
 import java.util.Scanner;
 
-public class print_nth_fibbonacci_number {
+public class n_fibonacci_terms {
     public static int fibonnacci(int n){
-        if(n == 2){ return 1;}
-        if(n == 1){ return 0;}
+        if(n == 1){
+            return 1;
+        }
+        if(n == 0){
+            System.out.printf("inside recursion -> 0");
+            return 0;
+        }
+
         return fibonnacci(n-1) + fibonnacci(n-2);
     }
     public static void main(String[] args){
         System.out.println("--------------");
-        System.out.println("nth fibonacci number");
+        System.out.println("n fibonacci terms");
         System.out.println("--------------");
 
         Scanner sc = new Scanner(System.in);
@@ -19,7 +25,6 @@ public class print_nth_fibbonacci_number {
 
         int a = 0;
         int b = 1;
-
         System.out.printf("%d, %d, ", a, b);
 
         for(int i = 2; i<n; i++){
@@ -32,7 +37,7 @@ public class print_nth_fibbonacci_number {
         System.out.println();
 
         int num = fibonnacci(n);
-        System.out.println(num);
+        System.out.printf("%d, ", num);
 
         sc.close();
     }
