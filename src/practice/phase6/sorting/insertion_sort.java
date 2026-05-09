@@ -1,9 +1,9 @@
 package practice.phase6.sorting;
-import java.util.Scanner;
+import java.util.*;
 
-public class bubble_sort {
+public class insertion_sort {
     public static void main(String[] args){
-        System.out.println("bubble sort");
+        System.out.println("insertion sort");
         Scanner sc = new Scanner(System.in);
 
         int[] nums = new int[5];
@@ -13,25 +13,21 @@ public class bubble_sort {
         }
 
         for(int i = 0; i< nums.length; i++){
-            boolean swapped = false;
-            for(int j = 0; j< nums.length-i-1; j++){
-                if(nums[j] > nums[j+1]){
+            int j = i;
+            while(j>=1){
+                if(nums[j-1]> nums[j]){
                     int temp = nums[j];
-                    nums[j] = nums[j+1];
-                    nums[j+1] = temp;
-
-                    swapped  = true;
+                    nums[j] = nums[j-1];
+                    nums[j-1] = temp;
                 }
-            }
-            if(!swapped){
-                break;
+                j--;
             }
         }
 
+        System.out.println("printing sorted array using insertion sort");
         for(int num : nums){
             System.out.printf("%d, ", num);
         }
-
 
         sc.close();
     }

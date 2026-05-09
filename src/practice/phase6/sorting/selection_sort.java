@@ -6,31 +6,28 @@ public class selection_sort {
         System.out.println("selection sort");
         Scanner sc = new Scanner(System.in);
 
-        int[] arr = new int[5];
-        for(int i = 0; i< arr.length; i++){
-            System.out.printf("enter value for %d position: ", i+1);
-            arr[i] = sc.nextInt();
+        int[] nums = new int[5];
+        for(int i = 0; i< nums.length; i++){
+            System.out.printf("enter value for %d element: ", i+1);
+            nums[i] = sc.nextInt();
         }
 
-
-        for(int i = 0; i< arr.length; i++){
+        for(int i = 0; i< nums.length; i++){
             int min_index = i;
-            for(int j = i+1; j< arr.length; j++){
-                if(arr[j] < arr[min_index]){
+            for(int j = i+1; j< nums.length; j++){
+                if(nums[j]<nums[min_index]){
                     min_index = j;
                 }
             }
-            int temp = arr[min_index];
-            arr[min_index] = arr[i];
-            arr[i] = temp;
+            int temp = nums[min_index];
+            nums[min_index] = nums[i];
+            nums[i] = temp;
         }
 
-        System.out.println("printing sorted array");
-        for(int i = 0; i< arr.length; i++){
-            System.out.printf("%d, ", arr[i]);
+        System.out.println("sorted array using selection sort");
+        for(int i = 0; i< nums.length; i++){
+            System.out.printf("%d, ", nums[i]);
         }
-
-        System.out.println();
 
 
 
