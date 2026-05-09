@@ -14,13 +14,12 @@ public class insertion_sort {
 
         for(int i = 0; i< nums.length; i++){
             int j = i;
-            while(j>=1){
-                if(nums[j-1]> nums[j]){
-                    int temp = nums[j];
-                    nums[j] = nums[j-1];
-                    nums[j-1] = temp;
-                }
+            while(j>=1 && (nums[j-1]> nums[j])){
+                int temp = nums[j];
+                nums[j] = nums[j-1];
+                nums[j-1] = temp;
                 j--;
+                System.out.println("runs");
             }
         }
 
