@@ -14,7 +14,7 @@ public class binary_search {
         }else if(nums[mid]< target){
             return find(nums, mid+1, high, target);
         }else{
-            return find(nums, low, mid, target);
+            return find(nums, low, mid-1, target);
         }
     }
 
