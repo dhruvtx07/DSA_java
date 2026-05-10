@@ -1,44 +1,40 @@
 package practice.phase6.sorting;
-import java.util.*;
+import java.util.Scanner;
 
 public class quick_sort {
-    public static void sort(int[] nums, int start, int mid, int end){
-        ArrayList<Integer> temp = new ArrayList<>();
-        int middle = mid+1;
-        int originalStart = start;
-        while(start <= mid && middle <= end){
-            if(nums[start]<= nums[middle]){
-                temp.add(nums[start]);
-                start++;
-            }else{
-                temp.add(nums[middle]);
-                middle++;
+    public static int sort(int[] nums, int low, int high){
+        int pivot = low;
+        int i = low;
+        int j = high;
+
+        while(i < j){
+            while(nums[i] <= nums[pivot] && i <= high-1){
+                i++;
+            }
+            while(nums[j]> nums[pivot] && j >= low+1){
+                j--;
+            }
+            if(i<j){
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
             }
         }
-        while(start<=mid){
-            temp.add(nums[start]);
-            start++;
-        }
-        while(middle<=end){
-            temp.add(nums[middle]);
-            middle++;
-        }
-        for(int i = originalStart; i<=end; i++){
-            nums[i] = temp.get(i - originalStart);
-        }
-    }
 
-    public static void qs(int[] nums, int start, int end){
-        if(start >= end){
+        int temp = nums[pivot];
+        nums[pivot] = nums[j];
+        nums[j] = temp;
+
+        return j;
+    }
+    public static void qs(int[] nums, int low, int high){
+        if(low>=high){
             return;
         }
-        int last = nums.length-1;
-        int mid = start + (end - start)/2;
 
-        qs(nums, start, mid);
-        qs(nums, mid+1, end);
-
-        sort(nums, start, mid, end);
+        int partition = sort(nums, low, high);
+        qs(nums, low, partition-1);
+        qs(nums, partition+1, high);
     }
     public static void main(String[] args){
         System.out.println("quick sort");
@@ -53,9 +49,12 @@ public class quick_sort {
 
         qs(nums, 0, nums.length-1);
 
-        for(int i = 0; i< nums.length; i++){
-            System.out.printf("%d, ", nums[i]);
+        System.out.println("sorted array using merge sort");
+        for(int num : nums){
+            System.out.printf("%d, ", num);
         }
+
+
 
         sc.close();
     }
