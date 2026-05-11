@@ -1,4 +1,4 @@
-package practice.phase6.sorting;
+package practice.sorting;
 import java.util.*;
 
 public class insertion_sort {
