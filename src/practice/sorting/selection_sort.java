@@ -1,36 +1,34 @@
 package practice.sorting;
-import java.util.Scanner;
+import java.util.*;
 
 public class selection_sort {
     public static void main(String[] args){
-        System.out.println("selection sort");
+        System.out.println("Selection sort");
         Scanner sc = new Scanner(System.in);
 
         int[] nums = new int[5];
-        for(int i = 0; i< nums.length; i++){
-            System.out.printf("enter value for %d element: ", i+1);
+        for(int i = 0; i<nums.length; i++){
+            System.out.printf("enter value for %d position: ", i+1);
             nums[i] = sc.nextInt();
         }
 
-        for(int i = 0; i< nums.length; i++){
-            int min_index = i;
-            for(int j = i+1; j< nums.length; j++){
-                if(nums[j]<nums[min_index]){
-                    min_index = j;
+        for(int j = 0; j<nums.length-1; j++){
+            int min_index = j;
+            for(int k = j+1; k<nums.length; k++){
+                if(nums[min_index]>nums[k]){
+                    min_index = k;
                 }
             }
             int temp = nums[min_index];
-            nums[min_index] = nums[i];
-            nums[i] = temp;
+            nums[min_index] = nums[j];
+            nums[j] = temp;
         }
 
-        System.out.println("sorted array using selection sort");
-        for(int i = 0; i< nums.length; i++){
-            System.out.printf("%d, ", nums[i]);
+        for(int num: nums){
+            System.out.printf("%d, ", num);
         }
-
-
 
         sc.close();
     }
+
 }
