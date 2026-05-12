@@ -12,12 +12,16 @@ public class insertion_sort {
             nums[i] = sc.nextInt();
         }
 
-        for(int i = 1; i<nums.length; i++){
-            int k = 0;
-            while(k<=i){
-                if(){}
-                k++;
+        for(int i = 0; i<nums.length; i++){
+            int j = i;
+            while(j>0 && nums[j] < nums[j-1]){
+                int temp = nums[j];
+                nums[j] = nums[j-1];
+                nums[j-1] = temp;
+                j--;
+                System.out.println("runs");
             }
+
         }
 
         for(int num : nums){
