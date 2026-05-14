@@ -10,7 +10,16 @@ public class pattern {
                     System.out.printf("%d", column);
                 }
                 else{
-                    System.out.print("*");
+                    System.out.print(" ");
+                }
+            }
+
+            for(int column = 4; column>=1; column--){
+                if(column<=rows){
+                    System.out.printf("%d", column);
+                }
+                else{
+                    System.out.print(" ");
                 }
             }
 
