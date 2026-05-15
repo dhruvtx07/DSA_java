@@ -1,4 +1,4 @@
-package practice.striver;
+package practice.striver.patterns;
 
 public class pattern {
     public static void main(String[] args){
