@@ -2,7 +2,7 @@ package practice.striver.patterns;
 
 public class print_spiral_box {
     public static void main(String[] args){
-        int[][] box = new int[1][5];
+        int[][] box = new int[2][2];
         int length = box.length;
         int breadth = box[0].length;
 
@@ -15,12 +15,11 @@ public class print_spiral_box {
 
         for(int i = 0; i<box[0].length-1; i++){
             for(int i1 = left; i1<=right;i1++){
-                System.out.printf("box[top] = %d [i1] = %d\n", top, i1);
+                // System.out.printf("box[top] = %d [i1] = %d\n", top, i1);
                 box[top][i1] = counter;
                 counter++;
             }
             top++;
-
 
             for(int i2 = top; i2<=bottom; i2++){
                 box[i2][right] = counter;
@@ -35,6 +34,7 @@ public class print_spiral_box {
                 }
                 bottom--;
             }
+
 
             if(left<=right){
                 for(int i4 = bottom; i4>=top; i4--){
